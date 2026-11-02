@@ -25,6 +25,7 @@ That copies `extension/` and merges `platforms/firefox/manifest.overrides.json` 
 Reuse `store/chrome/LISTING.md`. The description, summary and privacy policy all apply as-is. AMO also asks:
 
 - **Categories:** Shopping
+- **License:** GNU General Public License v3.0 (pick "or later" if AMO offers it)
 - **Support site:** https://github.com/wendsell/spoolghetti/issues
 - **Homepage:** https://wendsell.github.io/spoolghetti/
 - **Privacy policy:** paste the text from `PRIVACY.md`

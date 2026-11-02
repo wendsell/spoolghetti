@@ -40,6 +40,9 @@ Spoolghetti only switches on for filament searches. Shopping for anything else, 
 PRIVATE BY DESIGN
 No tracking, no analytics, no accounts, no servers. Everything runs in your browser.
 
+FREE SOFTWARE
+Licensed under the GNU GPL v3 or later. Source code: https://github.com/wendsell/spoolghetti
+
 A "~" means the weight was worked out from Amazon's unit price because the title didn't say. Always double-check the product page before you buy.
 
 Spoolghetti is an independent tool and is not affiliated with or endorsed by Amazon.

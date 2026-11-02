@@ -20,6 +20,7 @@
 - **Filters** for material (PLA, PLA+, PETG, ABS, ASA, TPU, Nylon, PC), brand, and spool-less refills. Settings sync across your Chrome devices.
 - **Only on filament searches.** Search for anything else and it does nothing.
 - **Private.** No tracking, no analytics, no servers.
+- **Free software.** GPLv3 or later. Read it, change it, share it.
 
 ## Install
 
@@ -60,6 +61,14 @@ Needs `zip` and `python3`.
 ## When it breaks
 
 Amazon changes its page markup a few times a year. If badges stop showing up, the selectors near the top of the DOM section in `extension/content.js` (`CARD_SEL`, `getPrice`, `getTitle`) are the usual suspects. Open an issue with the search URL and a screenshot.
+
+## License
+
+Spoolghetti is free software: you can redistribute it and/or modify it under the terms of the [GNU General Public License](LICENSE) as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+It is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the [GNU General Public License](LICENSE) for more details.
+
+Copyright (C) 2026 wendsell. The icons, screenshots and promo images in this repo are covered by the same license.
 
 ---
 

@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# Copyright (C) 2026 wendsell
+# SPDX-License-Identifier: GPL-3.0-or-later
+#
 # Build store-ready zips into dist/.
 #   scripts/build.sh            -> Chrome + Firefox
 #   scripts/build.sh chrome     -> Chrome only
