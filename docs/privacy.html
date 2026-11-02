@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spoolghetti Privacy Policy</title>
+<link rel="icon" type="image/png" href="img/favicon.png">
+<style>
+  :root { --bg:#ffffff; --fg:#14181d; --muted:#5a6370; --line:#e3e7ec; --link:#0b6bcb; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#121417; --fg:#e8eaed; --muted:#9aa2ad; --line:#2b3037; --link:#6fb3ff; }
+  }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif; }
+  .wrap { max-width:760px; margin:0 auto; padding:40px 16px 56px; }
+  a { color:var(--link); }
+  .back { display:inline-flex; align-items:center; gap:8px; text-decoration:none; font-weight:700; color:var(--fg); }
+  .back img { width:28px; height:28px; }
+  h1 { margin:28px 0 4px; font-size:32px; }
+  .updated { color:var(--muted); margin:0 0 24px; }
+  h2 { margin:32px 0 8px; font-size:20px; }
+  li { margin:6px 0; }
+  footer { margin-top:40px; padding-top:20px; border-top:1px solid var(--line); color:var(--muted); font-size:14px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="./"><img src="img/icon128.png" alt=""> Spoolghetti</a>
+
+  <h1>Privacy Policy</h1>
+  <p class="updated">Last updated: November 2, 2026</p>
+
+  <p><b>Spoolghetti does not collect, store, sell, or transmit any personal information.</b></p>
+
+  <h2>What the extension does with data</h2>
+  <ul>
+    <li><b>Reads Amazon.com search result pages</b> in your browser to calculate price per kilogram, filter listings, and sort them. This happens entirely on your device.</li>
+    <li><b>Loads additional pages of the same search</b> from amazon.com, the same way your browser would if you clicked "Next". These requests go only to amazon.com.</li>
+    <li><b>Saves your filter settings</b> (for example hidden brands, materials, and minimum spool size) using the browser's built-in extension storage. If browser sync is turned on, your browser syncs these settings to your other devices through your own browser account. The developer never receives them.</li>
+  </ul>
+
+  <h2>What it does not do</h2>
+  <ul>
+    <li>No analytics, tracking, or telemetry.</li>
+    <li>No servers. The extension never sends data to the developer or any third party.</li>
+    <li>No access to any website other than Amazon.com search pages.</li>
+    <li>No remote code. All code ships inside the extension package.</li>
+  </ul>
+
+  <h2>Contact</h2>
+  <p>Questions about this policy: <a href="https://github.com/wendsell/spoolghetti/issues">open an issue on GitHub</a>.</p>
+
+  <footer>Spoolghetti is an independent project and is not affiliated with or endorsed by Amazon.</footer>
+</div>
+</body>
+</html>

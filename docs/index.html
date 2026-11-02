@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spoolghetti</title>
+<meta name="description" content="Check the math. True price per kg on Amazon.com 3D printer filament searches, best deals sorted to the top, junk filtered out.">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<style>
+  :root {
+    --bg:#ffffff; --fg:#14181d; --muted:#5a6370; --card:#f5f7f9; --line:#e3e7ec;
+    --navy:#232f3e; --gold:#ffc21a; --green:#067d62; --link:#0b6bcb;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#121417; --fg:#e8eaed; --muted:#9aa2ad; --card:#1b1e23; --line:#2b3037; --link:#6fb3ff; }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif; }
+  a { color:var(--link); }
+  .wrap { max-width:1040px; margin:0 auto; padding:0 16px; }
+  header.hero { background:linear-gradient(135deg,#232f3e,#131921); color:#fff; padding:56px 0 64px; }
+  .hero .wrap { display:flex; gap:32px; align-items:center; flex-wrap:wrap; }
+  .hero img { width:120px; height:120px; flex:none; }
+  .hero h1 { margin:0; font-size:clamp(36px,6vw,56px); line-height:1.1; }
+  .hero .tag { color:var(--gold); font-weight:700; font-size:22px; margin:6px 0 10px; }
+  .hero p { margin:0; max-width:560px; color:#d6dbe1; font-size:18px; }
+  .btns { display:flex; gap:12px; flex-wrap:wrap; margin-top:22px; }
+  .btn { display:inline-block; padding:10px 18px; border-radius:8px; font-weight:700; text-decoration:none; }
+  .btn.primary { background:var(--gold); color:#111; }
+  .btn.ghost { border:1px solid rgba(255,255,255,.35); color:#fff; }
+  .btn.disabled { opacity:.75; cursor:default; }
+  section { padding:48px 0; }
+  h2 { font-size:28px; margin:0 0 20px; }
+  .shot { width:100%; height:auto; border-radius:10px; border:1px solid var(--line); box-shadow:0 10px 30px rgba(0,0,0,.12); }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:18px; }
+  .card h3 { margin:0 0 6px; font-size:17px; }
+  .card p { margin:0; color:var(--muted); font-size:15px; }
+  .pill { display:inline-block; font-weight:800; font-size:13px; padding:1px 8px; border-radius:10px; margin-right:6px; }
+  .pill.gold { background:var(--gold); color:#111; }
+  .pill.green { background:var(--green); color:#fff; }
+  .shots2 { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:16px; }
+  ol.steps { padding-left:20px; } ol.steps li { margin:6px 0; }
+  code { background:var(--card); border:1px solid var(--line); border-radius:4px; padding:1px 5px; font-size:.9em; }
+  footer { border-top:1px solid var(--line); padding:28px 0 40px; color:var(--muted); font-size:14px; }
+  footer a { color:var(--muted); }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <img src="img/icon128.png" alt="">
+    <div>
+      <h1>Spoolghetti</h1>
+      <div class="tag">Check the math.</div>
+      <p>True price per kg on Amazon.com 3D printer filament searches. Best deals sorted to the top, junk filtered out.</p>
+      <div class="btns">
+        <span class="btn primary disabled" title="Submitted, waiting on review">Chrome Web Store: coming soon</span>
+        <a class="btn ghost" href="https://github.com/wendsell/spoolghetti">Source on GitHub</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="wrap">
+      <img class="shot" src="img/screenshot-1-sorted.png" width="1280" height="800" alt="Filament search results with price per kg badges, the cheapest listing outlined in gold and the next two in green">
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <h2>Stop doing spool math in your head</h2>
+      <div class="grid">
+        <div class="card"><h3>Price per kg on everything</h3><p>Packs, bundles, 4 x 1.1 kg, 250 g x 8, pounds, even listings that only show a per-ounce price.</p></div>
+        <div class="card"><h3>Best deals on top</h3><p>The whole search sorts cheapest per kg first. <span class="pill gold">#1</span> gold, <span class="pill green">#2</span><span class="pill green">#3</span> green.</p></div>
+        <div class="card"><h3>The whole search</h3><p>More result pages load in the background, so the ranking isn't stuck on page one.</p></div>
+        <div class="card"><h3>Junk filtered out</h3><p>Storage boxes, dryers, spool holders, 3D pen refills, sample packs and tiny spools disappear.</p></div>
+        <div class="card"><h3>Filters that stick</h3><p>Material, brand and refill filters, synced across your Chrome devices.</p></div>
+        <div class="card"><h3>Only when it matters</h3><p>Switches on for filament searches only. Shopping for anything else, it does nothing.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Filters and dark mode</h2>
+      <div class="shots2">
+        <img class="shot" src="img/screenshot-2-filters.png" width="1280" height="800" alt="Filter panel with refill, material and brand options">
+        <img class="shot" src="img/screenshot-3-dark.png" width="1280" height="800" alt="The same results and filter panel in dark mode">
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Install</h2>
+      <p><b>Chrome Web Store:</b> coming soon.</p>
+      <p><b>From source</b> (Chrome, Edge, Brave):</p>
+      <ol class="steps">
+        <li>Download the <a href="https://github.com/wendsell/spoolghetti/archive/refs/heads/main.zip">source zip</a> and unzip it.</li>
+        <li>Open <code>chrome://extensions</code> and turn on <b>Developer mode</b>.</li>
+        <li>Click <b>Load unpacked</b> and pick the <code>extension</code> folder.</li>
+        <li>Search Amazon.com for filament.</li>
+      </ol>
+      <p><b>Firefox:</b> planned.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Private by design</h2>
+      <p>No tracking, no analytics, no accounts, no servers. Everything runs in your browser. <a href="privacy.html">Read the privacy policy</a>.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="https://github.com/wendsell/spoolghetti/issues">Report a problem</a> · <a href="privacy.html">Privacy</a> · <a href="https://github.com/wendsell/spoolghetti">GitHub</a><br>
+    Spoolghetti is an independent project and is not affiliated with or endorsed by Amazon.
+  </div>
+</footer>
+
+</body>
+</html>
