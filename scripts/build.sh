@@ -3,9 +3,10 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 #
 # Build store-ready zips into dist/.
-#   scripts/build.sh            -> Chrome + Firefox
+#   scripts/build.sh            -> everything
 #   scripts/build.sh chrome     -> Chrome only
 #   scripts/build.sh firefox    -> Firefox only (see store/firefox/README.md, not yet tested)
+#   scripts/build.sh userscript -> userscript/spoolghetti.user.js (Tampermonkey / Violentmonkey)
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
@@ -48,9 +49,43 @@ PY
   echo "Firefox: $out  (untested, see store/firefox/README.md)"
 }
 
+build_userscript() {
+  # Same code as the extension, with a Tampermonkey/Violentmonkey header in front.
+  # Committed to the repo (not dist/) so it can be installed from its raw GitHub URL.
+  local out="$ROOT/userscript/spoolghetti.user.js"
+  local raw="https://raw.githubusercontent.com/wendsell/spoolghetti/main"
+  mkdir -p "$ROOT/userscript"
+  {
+    cat <<EOF
+// ==UserScript==
+// @name         Spoolghetti: Filament Price per kg
+// @namespace    https://github.com/wendsell/spoolghetti
+// @version      $VERSION
+// @description  Check the math. True price per kg on Amazon.com filament searches, best deals sorted to the top, junk filtered out.
+// @author       wendsell
+// @license      GPL-3.0-or-later
+// @homepageURL  https://wendsell.github.io/spoolghetti/
+// @supportURL   https://github.com/wendsell/spoolghetti/issues
+// @icon         $raw/extension/icons/icon48.png
+// @updateURL    $raw/userscript/spoolghetti.user.js
+// @downloadURL  $raw/userscript/spoolghetti.user.js
+// @match        https://www.amazon.com/s*
+// @grant        none
+// @run-at       document-idle
+// ==/UserScript==
+
+// GENERATED FILE. Edit extension/content.js, then run: scripts/build.sh userscript
+
+EOF
+    cat "$SRC/content.js"
+  } > "$out"
+  echo "Userscript: $out"
+}
+
 case "$TARGET" in
-  chrome)  build_chrome ;;
-  firefox) build_firefox ;;
-  all)     build_chrome; build_firefox ;;
-  *) echo "Usage: $0 [chrome|firefox|all]" >&2; exit 1 ;;
+  chrome)     build_chrome ;;
+  firefox)    build_firefox ;;
+  userscript) build_userscript ;;
+  all)        build_chrome; build_firefox; build_userscript ;;
+  *) echo "Usage: $0 [chrome|firefox|userscript|all]" >&2; exit 1 ;;
 esac

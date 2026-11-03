@@ -34,17 +34,28 @@
 3. Click **Load unpacked** and pick the `extension/` folder.
 4. Search Amazon.com for filament.
 
-If you used the old Tampermonkey userscript, turn it off first or every card gets two badges. Your userscript settings import automatically.
+**Userscript (no extension needed):**
 
-**Firefox:** planned. See [`store/firefox/`](store/firefox/README.md).
+Don't want to install an extension? Same code, as a userscript.
+
+1. Install a userscript manager: [Tampermonkey](https://www.tampermonkey.net/) or [Violentmonkey](https://violentmonkey.github.io/).
+2. Open **[spoolghetti.user.js](https://raw.githubusercontent.com/wendsell/spoolghetti/main/userscript/spoolghetti.user.js)** and click **Install** when your userscript manager asks.
+3. Search Amazon.com for filament.
+
+It updates itself from this repo. Differences from the extension: settings are saved per browser instead of syncing across devices.
+
+**Only run one.** If you have both the extension and the userscript turned on, every card gets two badges. Settings carry over when you switch from the userscript to the extension.
+
+**Firefox:** the userscript should work in Firefox through Tampermonkey or Violentmonkey (untested there so far). A native Firefox add-on is planned, see [`store/firefox/`](store/firefox/README.md).
 
 ## Repo layout
 
 | Path | What it is |
 |---|---|
 | `extension/` | The extension (Manifest V3). Load this folder unpacked. |
+| `userscript/` | Generated userscript for Tampermonkey / Violentmonkey. Don't edit it directly. |
 | `platforms/firefox/` | Firefox-only manifest keys, merged in at build time. |
-| `scripts/build.sh` | Builds store zips into `dist/`: `chrome`, `firefox`, or both. |
+| `scripts/build.sh` | Builds the store zips into `dist/` and regenerates the userscript. |
 | `store/chrome/` | Chrome Web Store listing copy, privacy answers, screenshots, promo tiles. |
 | `store/firefox/` | Placeholder and checklist for a future addons.mozilla.org release. |
 | `docs/` | GitHub Pages site (homepage and privacy policy). |
@@ -53,9 +64,13 @@ If you used the old Tampermonkey userscript, turn it off first or every card get
 ## Build
 
 ```
-scripts/build.sh          # Chrome + Firefox zips in dist/
-scripts/build.sh chrome   # Chrome only
+scripts/build.sh              # everything
+scripts/build.sh chrome       # Chrome zip in dist/
+scripts/build.sh firefox      # Firefox zip in dist/
+scripts/build.sh userscript   # regenerate userscript/spoolghetti.user.js
 ```
+
+All the logic lives in `extension/content.js`. The userscript is that same file with a userscript header on top, so after changing `content.js` (or bumping the version in `manifest.json`), run `scripts/build.sh userscript` and commit the result. Userscript installs auto-update from the copy on `main`.
 
 Needs `zip` and `python3`.
 
