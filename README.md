@@ -4,6 +4,7 @@
 <p align="center"><b>Check the math.</b><br>True price per kg on Amazon.com 3D printer filament searches, best deals sorted to the top, junk filtered out.</p>
 
 <p align="center">
+  <a href="https://chromewebstore.google.com/detail/mbclhfbdlfjfhlgcmbkhikdodmiidebc">Chrome Web Store</a> ·
   <a href="https://wendsell.github.io/spoolghetti/">Website</a> ·
   <a href="https://wendsell.github.io/spoolghetti/privacy.html">Privacy</a> ·
   <a href="https://github.com/wendsell/spoolghetti/issues">Report a problem</a>
@@ -24,9 +25,9 @@
 
 ## Install
 
-**Chrome Web Store:** coming soon.
+**[Get it on the Chrome Web Store](https://chromewebstore.google.com/detail/mbclhfbdlfjfhlgcmbkhikdodmiidebc)** (works in Chrome, Edge, Brave, and other Chromium browsers).
 
-**From source (Chrome, Edge, Brave):**
+**From source:**
 
 1. Download or clone this repo.
 2. Open `chrome://extensions` and turn on **Developer mode**.
