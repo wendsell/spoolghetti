@@ -464,7 +464,7 @@
         <div class="row">Highlight cheapest <input type="number" step="1" min="0" name="topN" value="${settings.highlightTop}"></div>
         <label><input type="checkbox" name="showHidden" ${settings.showHidden ? 'checked' : ''}> Show hidden listings (dimmed)</label>
       </section>
-      <section class="stats">${stats.shown} shown &middot; ${stats.small} small spools &middot; ${stats.filtered} filtered &middot; ${stats.junk} non-filament</section>
+      <section class="stats">${stats.shown} shown &middot; ${stats.small} small spools &middot; ${stats.filtered} filtered &middot; ${stats.junk} non-filament${stats.offpage ? ` &middot; ${stats.offpage} hidden by another extension or Amazon` : ''}</section>
     `;
     const nb = panel.querySelector('.brands');
     if (nb) nb.scrollTop = scroll;
@@ -559,7 +559,7 @@
   }
 
   let cardSeq = 0;
-  const stats = { shown: 0, small: 0, filtered: 0, junk: 0 };
+  const stats = { shown: 0, small: 0, filtered: 0, junk: 0, offpage: 0 };
 
   function hideReason(d) {
     if (!d.filament) return 'junk';
@@ -588,7 +588,7 @@
   }
 
   function applyFilters() {
-    stats.shown = stats.small = stats.filtered = stats.junk = 0;
+    stats.shown = stats.small = stats.filtered = stats.junk = stats.offpage = 0;
     const cards = allCards();
 
     if (!isFilamentPage(cards)) {
@@ -612,7 +612,16 @@
       card.classList.toggle('fil-hidden', !!why && !settings.showHidden);
       card.classList.toggle('fil-ghost', !!why && settings.showHidden);
       d.rank = 0;
-      if (!why && d.perKg !== null) visible.push(d);
+    });
+
+    // Cards hidden by something other than us can't be seen, so they can't be ranked.
+    // Ad blockers hide Sponsored results with CSS, and Amazon hides some placeholder cards.
+    // Checked after our own classes are applied; all reads happen here in one pass.
+    cards.forEach(card => {
+      const d = card._fil;
+      d.offPage = !d.why && card.getClientRects().length === 0;
+      if (d.offPage) { stats.shown--; stats.offpage++; }
+      if (!d.why && !d.offPage && d.perKg !== null) visible.push(d);
     });
 
     // #1 = gold, rest of top N = green. Ties share a rank.
@@ -663,7 +672,7 @@
   }
 
   function sortGroup(d) {
-    if (d.why) return 2;
+    if (d.why || d.offPage) return 2;
     return d.perKg === null ? 1 : 0;
   }
 
@@ -822,4 +831,6 @@
   }
 
   scan();
+  // Some ad blockers hide Sponsored cards a moment after load; re-check once so rankings skip them.
+  setTimeout(scan, 2500);
 })();

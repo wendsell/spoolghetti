@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Spoolghetti: Filament Price per kg",
   "short_name": "Spoolghetti",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Check the math. True price per kg on Amazon.com filament searches, best deals sorted to the top, junk filtered out.",
   "icons": {
     "16": "icons/icon16.png",
