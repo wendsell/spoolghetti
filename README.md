@@ -78,6 +78,10 @@ Needs `zip` and `python3`.
 
 Amazon changes its page markup a few times a year. If badges stop showing up, the selectors near the top of the DOM section in `extension/content.js` (`CARD_SEL`, `getPrice`, `getTitle`) are the usual suspects. Open an issue with the search URL and a screenshot.
 
+## More filament projects
+
+- **[simplyusage](https://github.com/wendsell/simplyusage)**: keeps [SimplyPrint](https://simplyprint.io/) spool weights accurate for Bambu Lab prints sent straight from Bambu Studio or Orca. Reads each print's per-color filament use and deducts it from the spool in the AMS slot that printed it.
+
 ## License
 
 Spoolghetti is free software: you can redistribute it and/or modify it under the terms of the [GNU General Public License](LICENSE) as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
