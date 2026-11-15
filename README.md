@@ -81,6 +81,7 @@ Amazon changes its page markup a few times a year. If badges stop showing up, th
 ## More filament projects
 
 - **[simplyusage](https://github.com/wendsell/simplyusage)**: keeps [SimplyPrint](https://simplyprint.io/) spool weights accurate for Bambu Lab prints sent straight from Bambu Studio or Orca. Reads each print's per-color filament use and deducts it from the spool in the AMS slot that printed it.
+- **[P1S BMCU Lifeline](https://wendsell.github.io/P1S-BMCU-Lifeline/)**: a field guide to getting the BMCU 370C DM working reliably on a Bambu Lab P1S: firmware, PTFE routing, rewinders, matte PLA, and a troubleshooting order that actually works.
 
 ## License
 
